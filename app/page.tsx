@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 async function getProducts() {
   try {
     const res = await fetch(
-      "https://skilltestnextjs.evidam.zybotechlab.com/api/new-products/"
+      "https://skilltestnextjs.evidam.zybotechlab.com/api/new-products"
     );
 
     if (!res.ok) {
