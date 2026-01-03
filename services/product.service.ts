@@ -1,6 +1,6 @@
 import { apiFetch } from "@/lib/api";
 
-export const getNewProducts = () =>
+export const getProducts = () =>
   apiFetch("/api/new-products/", {
     cache: "no-store",
   });
