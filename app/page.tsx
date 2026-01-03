@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 
 const res = await fetch(
-  "https://skilltestnextjs.evidam.zybotechlab.com",
+  "https://skilltestnextjs.evidam.zybotechlab.com/api/new-products",
   {
     next: { revalidate: 60 } 
   }
