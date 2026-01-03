@@ -1,3 +1,14 @@
+export const dynamic = "force-dynamic";
+
+const res = await fetch(
+  "https://skilltestnextjs.evidam.zybotechlab.com/api/new-products/",
+  {
+    next: { revalidate: 60 } 
+  }
+);
+
+
+
 import { getNewProducts } from "@/services/product.service";
 import ProductGrid from "@/components/product/ProductGrid";
 
