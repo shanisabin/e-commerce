@@ -25,6 +25,7 @@ export default function Login() {
   const [serverToken, setServerToken] = useState<string | null>(null);
   const [timeLeft, setTimeLeft] = useState(60);
   const [canResend, setCanResend] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -53,6 +54,7 @@ export default function Login() {
   const handlePhoneSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    setIsLoading(true);
     try {
       const res = await verifyOtp(phone);
 
@@ -69,6 +71,8 @@ export default function Login() {
     } catch (error) {
       console.error("OTP verification failed", error);
       alert("Failed to send OTP. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -113,6 +117,7 @@ export default function Login() {
   const handleNameSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    setIsLoading(true);
     try {
       const res = await registerUser({
         name,
@@ -125,6 +130,9 @@ export default function Login() {
       router.push("/profile");
     } catch (error) {
       console.error("Registration failed", error);
+      alert("Registration failed. Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -164,7 +172,7 @@ export default function Login() {
               required
               onChange={(e) => setPhone(e.target.value)}
             />
-            <Button label="Continue" />
+            <Button label={isLoading ? "Sending..." : "Continue"} disabled={isLoading} />
           </form>
         )}
 
@@ -212,7 +220,7 @@ export default function Login() {
               required
               onChange={(e) => setName(e.target.value)}
             />
-            <Button label="Continue" />
+            <Button label={isLoading ? "Registering..." : "Continue"} disabled={isLoading} />
           </form>
         )}
       </div>

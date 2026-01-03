@@ -2,15 +2,15 @@ import Image from "next/image";
 
 const SOCIAL_ICONS = [
   {
-    src: "/Images/gg_facebook.svg",
+    src: "/images/gg_facebook.svg",
     alt: "Facebook",
   },
   {
-    src: "/Images/prime_twitter.svg",
+    src: "/images/prime_twitter.svg",
     alt: "Twitter",
   },
   {
-    src: "/Images/formkit_instagram.svg",
+    src: "/images/formkit_instagram.svg",
     alt: "Instagram",
   },
 ];
@@ -20,7 +20,7 @@ export default function Footer() {
     <footer className="footer-section bg-[#161616] py-[94px] px-[60px] flex justify-between items-center border-t border-white/5">
       <div className="navbar-logo">
         <Image
-          src="/Images/logo.svg"
+          src="/images/logo.svg"
           alt="Nike Logo"
           width={80}
           height={30}
