@@ -49,7 +49,7 @@ export default async function ProfilePage() {
                                         <div className="w-[120px] h-[120px] bg-[#2A2A2A] rounded-[12px] flex items-center justify-center overflow-hidden flex-shrink-0 relative">
                                             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle,_#9EFF00_0%,_transparent_70%)]" />
                                             <img
-                                                src={order.product?.image || order.product_image || order.image || "/images/product-placeholder.png"}
+                                                src={order.product?.image || order.product_image || order.image || "/assets/product-placeholder.png"}
                                                 alt={order.product?.name || order.product_name || "Nike Product"}
                                                 className="w-[90%] h-[90%] object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)] relative z-10"
                                             />

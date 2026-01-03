@@ -35,7 +35,7 @@ export default function Navbar() {
       <div className="navbar-logo">
         <Link href="/">
           <Image
-            src="/images/logo.svg"
+            src="/assets/logo.svg"
             alt="Nike Logo"
             width={52}
             height={52}
@@ -51,7 +51,7 @@ export default function Navbar() {
           >
             <div className="w-5 h-5 flex items-center justify-center ">
               <Image
-                src="/images/UserCircle.svg"
+                src="/assets/UserCircle.svg"
                 alt="Nike Logo"
                 width={24}
                 height={24}

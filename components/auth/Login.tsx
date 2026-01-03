@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import InputField from "../input-field/InputField";
 import Button from "../button/Button";
 import OtpInput from "../OtpInput/OtpInput";
+import Image from "next/image";
 
 import { verifyOtp, registerUser } from "@/services/auth.service";
 import { useAuthStore } from "@/store/auth.store";
@@ -98,7 +99,7 @@ export default function Login() {
       return;
     }
 
-    if (enteredOtp !== serverOtp?.trim()) {
+    if (enteredOtp !== String(serverOtp || "").trim()) {
       alert(`Invalid OTP. You entered: ${enteredOtp}, Expected: ${serverOtp}`);
       return;
     }
@@ -140,11 +141,13 @@ export default function Login() {
   return (
     <div className="login-section flex flex-row bg-black min-h-screen">
       <div className="login-left-img flex-1 flex items-center justify-center">
-        <img
-          src="/images/login-hero-img.svg"
+        <Image
+          src="/assets/login-hero-img.svg"
           alt="Login Image"
           width={720}
           height={871}
+          priority
+          className="object-contain"
         />
       </div>
 

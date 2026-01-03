@@ -15,7 +15,9 @@ export const apiFetch = async (
     );
   }
 
-  const url = `${BASE_URL}${endpoint}`;
+  const baseUrl = BASE_URL.endsWith("/") ? BASE_URL.slice(0, -1) : BASE_URL;
+  const normalizedEndpoint = endpoint.startsWith("/") ? endpoint : `/${endpoint}`;
+  const url = `${baseUrl}${normalizedEndpoint}`;
   console.log(`Fetching: ${url}`, options);
 
   try {

@@ -25,11 +25,14 @@ export interface RegisterResponse {
 }
 
 
-export const verifyOtp = (phone: string): Promise<VerifyOtpResponse> => {
-  return apiFetch("/api/verify/", {
+export const verifyOtp = async (phone: string): Promise<VerifyOtpResponse> => {
+  const res = await apiFetch("/api/verify/", {
     method: "POST",
     body: JSON.stringify({ phone_number: phone }),
+    cache: "no-store",
   });
+  console.log("Service Layer OTP Response:", res);
+  return res;
 };
 
 export const registerUser = (

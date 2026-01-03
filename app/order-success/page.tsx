@@ -43,7 +43,7 @@ export default async function OrderSuccessPage({ searchParams }: OrderSuccessPag
 
         <div className="mb-2 relative z-10">
           <Image
-            src="/images/logo.svg"
+            src="/assets/logo.svg"
             alt="Nike Logo"
             width={70}
             height={24}
